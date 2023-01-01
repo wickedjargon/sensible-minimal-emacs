@@ -277,3 +277,12 @@
   (global-diff-hl-mode)
   )
 
+(use-package sly
+  :defer t
+  :ensure t
+  :init
+  (setq inferior-lisp-program "/usr/bin/sbcl")
+  (define-key lisp-mode-map (kbd "C-j") 'sly-eval-print-last-expression)
+  (define-key lisp-mode-map (kbd "C-<return>") 'sly-eval-print-last-expression)
+  )
+
