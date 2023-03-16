@@ -67,11 +67,6 @@
 (defun display-startup-echo-area-message ()
   (message "(emacs-init-time) -> %s" (emacs-init-time)))
 
-;; open .pl files in prolog-mode
-(autoload 'prolog-mode "prolog" "" t)
-(add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; use-package setup:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -164,11 +159,6 @@
   :defer t
   )
 
-(use-package go-mode
-  :ensure t
-  :defer t
-  )
-
 (use-package ivy
   :defer t
   :ensure t
@@ -209,7 +199,7 @@
 (use-package projectile
   :ensure t
   :init
-  (setq projectile-project-root-files '("manage.py" ".git/"))
+  (setq projectile-project-root-files '(".git/"))
   (setq projectile-ignored-projects '("~/"))
   (projectile-mode +1)
   )
