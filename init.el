@@ -176,26 +176,6 @@
   (setq ivy-initial-inputs-alist nil)
   )
 
-(use-package lsp-mode
-  :defer t
-  :ensure t
-  :init
-  (setq lsp-completion-enable-additional-text-edit nil)
-  (setq-default c-basic-offset 4)
-  (setq lsp-enable-symbol-highlighting nil)
-  (setq lsp-headerline-breadcrumb-enable nil)
-  (setq lsp-lens-enable t)
-  (setq lsp-signature-auto-activate nil)
-  (setq lsp-eldoc-enable-hover nil)
-  (setq lsp-modeline-code-actions-enable nil)
-  (setq lsp-modeline-diagnostics-enable nil)
-  (setq lsp-signature-render-documentation nil)
-  (setq lsp-keymap-prefix "C-c l")
-  :hook
-  (c-mode . lsp)
-  (rust-mode . lsp)
-  )
-
 (use-package projectile
   :ensure t
   :init
