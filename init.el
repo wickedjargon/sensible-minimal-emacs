@@ -33,9 +33,9 @@
 (setq mode-require-final-newline nil)                   ;; don't add a newline at the bottom of the file
 (menu-bar-mode -1)                                      ;; no menu bar
 (setq auto-save-file-name-transforms                    ;;  (save auto save data
-      '((".*" "~/.config/emacs/auto-save-list/" t)))    ;;  in a separate directory)
+      `((".*" ,(concat user-emacs-directory "auto-save-list/") t)))    ;;  in a separate directory)
 (setq backup-directory-alist                            ;; (save backup files
-      '(("." . "~/.config/emacs/backups")))             ;; in a separate directory)
+      `(("." . ,(concat user-emacs-directory "backups"))))             ;; in a separate directory)
 (blink-cursor-mode -1)                                  ;; don't blink my cursor
 (global-auto-revert-mode +1)                            ;; auto revert files and buffers
 (add-hook 'dired-mode-hook #'auto-revert-mode)          ;; revert dired buffers, but not buffer list buffers
