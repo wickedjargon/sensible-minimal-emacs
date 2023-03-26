@@ -237,6 +237,7 @@
 
 (use-package smex
   :ensure t
+  :config (smex-initialize)
   )
 
 (use-package diff-hl
@@ -255,9 +256,5 @@
   (setq inferior-lisp-program "/usr/bin/sbcl")
   (define-key lisp-mode-map (kbd "C-j") 'sly-eval-print-last-expression)
   (define-key lisp-mode-map (kbd "C-<return>") 'sly-eval-print-last-expression)
-  )
-
-(use-package smex
-  :ensure t
   )
 
