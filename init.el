@@ -257,3 +257,7 @@
   (define-key lisp-mode-map (kbd "C-<return>") 'sly-eval-print-last-expression)
   )
 
+(use-package smex
+  :ensure t
+  )
+
