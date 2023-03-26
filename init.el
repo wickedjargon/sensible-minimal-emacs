@@ -38,6 +38,7 @@
       `(("." . ,(concat user-emacs-directory "backups"))))             ;; in a separate directory)
 (blink-cursor-mode -1)                                  ;; don't blink my cursor
 (global-auto-revert-mode +1)                            ;; auto revert files and buffers
+(global-goto-address-mode +1)                           ;; make links/urls clickable
 (add-hook 'dired-mode-hook #'auto-revert-mode)          ;; revert dired buffers, but not buffer list buffers
 (delete-selection-mode +1)                              ;; delete selction when hitting backspace on region
 (set-default 'truncate-lines t)                         ;; don't wrap my text
