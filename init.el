@@ -9,9 +9,6 @@
 
 (setq package-list '(use-package markdown-mode gcmh))
 
-(unless (assoc-default "melpa" package-archives)
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
-
 (setq package-list '(use-package gcmh))
 
 (unless package-archive-contents
