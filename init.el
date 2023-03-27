@@ -175,7 +175,10 @@
   :ensure t
   :init
   (setq ivy-initial-inputs-alist nil)
+  (when (commandp 'counsel-M-x)
+    (global-set-key [remap execute-extended-command] #'counsel-M-x))
   )
+
 
 (use-package projectile
   :ensure t
