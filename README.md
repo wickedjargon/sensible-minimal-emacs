@@ -1,4 +1,4 @@
-# Sensible emacs config without 
+# Sensible minimal emacs 
 This is an Emacs starter kit I've created that I'd recommend to anyone
 
 ## Details:
