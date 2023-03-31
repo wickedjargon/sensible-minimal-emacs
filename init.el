@@ -9,8 +9,6 @@
 
 (setq package-list '(use-package markdown-mode gcmh))
 
-(setq package-list '(use-package gcmh))
-
 (unless package-archive-contents
   (package-refresh-contents))
 (dolist (package package-list)
