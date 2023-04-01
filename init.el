@@ -56,9 +56,6 @@
 ;; prevent active process when closing a shell like vterm or eshell:
 (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
-;; I prefer a full screen new buffer, not a split screen:
-(setq display-buffer-base-action '((display-buffer-reuse-window display-buffer-same-window)))
-
 ;; show startup time on launch
 (defun display-startup-echo-area-message ()
   (message "(emacs-init-time) -> %s" (emacs-init-time)))
