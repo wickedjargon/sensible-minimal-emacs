@@ -221,6 +221,24 @@
   :config
   (ivy-prescient-mode))
 
+(use-package org-bullets
+  :ensure t
+  :defer t
+  :init
+    (require 'org-bullets)
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  )
+
+
+(use-package emmet-mode
+  :ensure t
+  :defer t
+  :init
+  (require 'emmet-mode)
+  (add-hook 'html-mode-hook (lambda () (emmet-mode 1)))
+  )
+
+
 (use-package magit
   :ensure t
   :defer t
@@ -247,12 +265,13 @@
   (global-diff-hl-mode)
   )
 
-(use-package sly
-  :defer t
-  :ensure t
-  :init
-  (setq inferior-lisp-program "/usr/bin/sbcl")
-  (define-key lisp-mode-map (kbd "C-j") 'sly-eval-print-last-expression)
-  (define-key lisp-mode-map (kbd "C-<return>") 'sly-eval-print-last-expression)
-  )
+(use-package hl-todo
+       :ensure t
+       :custom-face
+       (hl-todo ((t (:inherit hl-todo :italic t))))
+       :hook ((prog-mode . hl-todo-mode)
+              (yaml-mode . hl-todo-mode)))
+
+(use-package saveplace
+  :init (save-place-mode))
 
