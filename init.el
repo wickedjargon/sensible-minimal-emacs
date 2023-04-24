@@ -272,3 +272,6 @@
 (use-package saveplace
   :init (save-place-mode))
 
+(use-package quickrun
+  :ensure t
+  )
