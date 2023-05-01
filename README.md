@@ -6,8 +6,8 @@ This is an Emacs starter kit I've created that I'd recommend to anyone
 - sensible default settings.
 - no custom keybindings set.
 - clean look with no visual distractions.
-- many high-quality packages for you to discover and use (see the `use-package setup` section).git clone --depth 1 https://github.com/wickedjargon/evil-and-sensible.git ~/.config/emacs/
-- a comprehensive `.gitignore`
+- many high-quality packages for you to discover and use (see the `use-package setup` section).
+- a comprehensive `.gitignore` in case you choose to share your config.
 - settings that allow fast startup time.
 
 
