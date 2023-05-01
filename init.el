@@ -97,7 +97,7 @@
 (use-package terminal-here
   :defer t
   :ensure t
-  :init
+  ;; :init
   ;; (setq terminal-here-linux-terminal-command 'st)
   )
 
