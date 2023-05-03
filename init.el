@@ -275,3 +275,8 @@
 (use-package quickrun
   :ensure t
   )
+
+
+(use-package hydra
+  :ensure t
+  )
