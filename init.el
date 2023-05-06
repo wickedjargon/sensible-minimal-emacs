@@ -280,3 +280,8 @@
 (use-package hydra
   :ensure t
   )
+
+(use-package winner
+  :ensure t
+  :defer t)
+
