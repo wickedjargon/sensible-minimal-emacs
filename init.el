@@ -66,19 +66,23 @@
 
 (require 'use-package)
 
+;; loads my favorite dark theme for emacs
 (use-package modus-themes
   :ensure t
   :config
   (load-theme 'modus-vivendi :no-confim))
 
+;; loads the best modeline for emacs
 (use-package doom-modeline
   :ensure t
   :custom ((doom-modeline-height 16))
   :init (doom-modeline-mode 1))
 
+;; for code snippets
 (use-package yasnippet
   :ensure t)
 
+;; for code snippets
 (use-package yasnippet-snippets 
   :ensure t
   :config
@@ -90,10 +94,15 @@
   :ensure t
   )
 
+;; adds the best terminal emulator  for emacs
 (use-package vterm
   :defer t
   :ensure t)
 
+;; open a terminal in the working directory.
+;; be sure to set your terminal by uncommenting 
+;; the two lines below and replacing `st` with
+;; your preferred terminal
 (use-package terminal-here
   :defer t
   :ensure t
@@ -101,12 +110,14 @@
   ;; (setq terminal-here-linux-terminal-command 'st)
   )
 
+;; this prevents a long-standing bug with emacs and long lines
 (use-package so-long
   :defer t
   :ensure t
   :init
   (global-so-long-mode +1))
 
+;; intellisense/autocomplete 
 (use-package company
   :defer t
   :ensure t
@@ -114,44 +125,54 @@
   (global-company-mode)
   )
 
+;; adds a function to restart emacs
 (use-package restart-emacs
   :defer t
   :ensure t
   )
 
+;; adds functions that allow window dynamic/relative resizing 
 (use-package windsize
   :defer t
   :ensure t
   )
 
+;; adds a lot of useful functions
 (use-package crux
   :defer t
   :ensure t
   )
 
+;; html editing toolkit
 (use-package emmet-mode
-  :defer t
   :ensure t
-  :init (add-hook 'sgml-mode-hook 'emmet-mode)
+  :defer t
+  :init
+  (require 'emmet-mode)
   (add-hook 'html-mode-hook (lambda () (emmet-mode 1)))
+  (add-hook 'sgml-mode-hook 'emmet-mode)
   )
 
+;; markdown support
 (use-package markdown-mode
   :ensure t
   :defer t
   :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown"))
 
+;; an online thesaurus
 (use-package mw-thesaurus
   :ensure t
   :defer t
   )
 
+;; github markdown. allows markdown to html conversion
 (use-package gh-md
   :ensure t
   :defer t
   )
 
+;; completion frontend
 (use-package ivy
   :defer t
   :ensure t
@@ -162,6 +183,7 @@
   (ivy-mode)
   )
 
+;; a part of the above package
 (use-package counsel
   :defer t
   :ensure t
@@ -171,7 +193,7 @@
     (global-set-key [remap execute-extended-command] #'counsel-M-x))
   )
 
-
+;; for managing projects
 (use-package projectile
   :ensure t
   :init
@@ -180,12 +202,14 @@
   (projectile-mode +1)
   )
 
+;; see function docstrings in M-x completion candidates
 (use-package marginalia
   :defer t
   :ensure t
   :init
   (marginalia-mode))
 
+;; emoji support
 (use-package emojify
   :defer t
   :ensure t
@@ -194,6 +218,7 @@
   (setq emojify-emoji-styles '(unicode))
   )
 
+;; cleaner directory editor settings
 (use-package dired
   :ensure nil
   :config
@@ -202,11 +227,13 @@
               (dired-hide-details-mode)))
   )
 
+;; switch window functions
 (use-package switch-window
   :ensure t
   :defer t
   )
 
+;; hex colors in editor
 (use-package rainbow-mode
   :ensure t
   :defer t
@@ -218,6 +245,7 @@
   :config
   (ivy-prescient-mode))
 
+;; make org look better with these bullet styles
 (use-package org-bullets
   :ensure t
   :defer t
@@ -227,20 +255,13 @@
   )
 
 
-(use-package emmet-mode
-  :ensure t
-  :defer t
-  :init
-  (require 'emmet-mode)
-  (add-hook 'html-mode-hook (lambda () (emmet-mode 1)))
-  )
-
-
+;; best git wrapper
 (use-package magit
   :ensure t
   :defer t
   )
 
+;; updates packages every 30 days on emacs launch
 (use-package auto-package-update
   :ensure t
   :config
@@ -253,6 +274,7 @@
   :config (smex-initialize)
   )
 
+;; see the lines that diff with your last commit 
 (use-package diff-hl
   :ensure t
   :init
@@ -262,6 +284,7 @@
   (global-diff-hl-mode)
   )
 
+;; highlight todos in documents
 (use-package hl-todo
        :ensure t
        :custom-face
@@ -269,18 +292,22 @@
        :hook ((prog-mode . hl-todo-mode)
               (yaml-mode . hl-todo-mode)))
 
+;; saves the place of the cursor in each file
 (use-package saveplace
   :init (save-place-mode))
 
+;; similar to vscodes `code runner` extension. 
+;; run code quickly without manually typing the shell command
 (use-package quickrun
   :ensure t
   )
 
-
+;; a better approach to key mappings
 (use-package hydra
   :ensure t
   )
 
+;; window configuration undo/redo
 (use-package winner
   :ensure t
   :defer t)
