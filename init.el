@@ -168,6 +168,14 @@
   :defer t
   :ensure t
   :config
+(add-to-list 'ivy-height-alist
+             (cons 'counsel-find-file
+                   (lambda (_caller)
+                     (/ (frame-height) 2))))
+(setq ivy-height-alist
+      '((t
+         lambda (_caller)
+         (/ (frame-height) 2))))
   (setq ivy-initial-inputs-alist nil)
   (setq ivy-on-del-error-function #'ignore)
   :init
@@ -289,4 +297,19 @@
 (use-package winner
   :ensure t
   :defer t)
+
+(use-package helpful
+  :ensure t
+  :bind
+  ([remap describe-key] . helpful-key)
+  ([remap describe-command] . helpful-command)
+  ([remap describe-variable] . helpful-variable)
+  ([remap describe-function] . helpful-callable))
+
+(use-package volatile-highlights
+  :ensure t
+  :defer t
+  :init
+  (volatile-highlights-mode t))
+
 
