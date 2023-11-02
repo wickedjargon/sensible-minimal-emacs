@@ -312,4 +312,9 @@
   :init
   (volatile-highlights-mode t))
 
-
+(use-package dimmer
+  :ensure t
+  :defer t
+  :init
+  (setq dimmer-fraction 0.25)
+  (dimmer-mode t))
