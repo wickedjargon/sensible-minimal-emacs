@@ -319,13 +319,6 @@
   :init
   (volatile-highlights-mode t))
 
-(use-package dimmer
-  :ensure t
-  :defer t
-  :init
-  (setq dimmer-fraction 0.25)
-  (dimmer-mode t))
-
 ;; one of the best tools to create a popup window, like a shell. requires setup
 (use-package popper
   :ensure t)
